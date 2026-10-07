@@ -1,9 +1,8 @@
 # configuration_verified.md
 
-**用途：** 回应 `CURSOR_LOCAL_CONFIG_REQUEST.md`，为 GPT 正文 / 补充材料 / R1 第 6 条提供可核对字段。  
-**原则：** 只写本地 KEEP 备份或可只读拉取的实现；无法核实写明「无法核实」；不猜 nnU-Net 默认值。  
-**主证据根：** `/Volumes/My Passport/IVOCT_KEEP/handoff_20261007`（下称 KEEP）。  
-**附小包：** `config_verified_bundle/`（本目录旁）。
+**用途：** 记录返修实验中已核实的训练与评价配置，供正文、补充材料及审稿回复第 6 条使用。  
+**原则：** 仅依据保存的 KEEP 备份或可核对的实现；无法核实的项目明确标出；不采用未经核对的 nnU-Net 默认值。  
+**主证据根：** `/Volumes/My Passport/IVOCT_KEEP/handoff_20261007`（下称 KEEP）。
 
 ---
 
@@ -172,24 +171,23 @@ Metadata：`trainer_name` 分别为 `…RevisionABCoord` / `…RevisionABNoCoord
 | 锁定配方说明、trainer、coord_conv、plans 摘要、split 清单、SHA256、审计 JSON | 可作审稿 supplementary / 按请求提供 |
 | 完整权重（~700MB/个）、完整预测 png/npz、原始病历像素 | **仅本地 KEEP / 原训练盘**；无公开 URL |
 | 真实发布地址（Zenodo/GitHub 等） | **无法核实 / 未配置**；勿虚构 |
-| 准备给审稿的小包 | 本仓库 `config_verified_bundle/` + 本文件 |
+| 本仓库中的配置摘录 | 本目录下的 `locks/`、`code/`、`split_manifests/`、`audit_refs/` 与本文件 |
 
 ---
 
-## [AUTHOR CONFIRM] 仍须作者本人确认（本文件不代填）
+## 仍须作者本人确认
 
 - 临床伦理批件表述、作者贡献、通讯邮箱  
-- 实际对外 AI 产品 / 模型名称与是否开源  
-- 是否对外托管代码与权重的真实 URL  
+- 对外产品或模型名称及是否开源  
+- 代码与权重的对外托管地址  
 
 ---
 
-## 小包目录
+## 本仓库目录
 
 ```
-config_verified_bundle/
-  locks/          splits_final.json, epoch_budget.json, eval_rules.json, SCHEME_FROZEN.md, seed2.json, plans_2d_from_A_backup.json
-  code/           coord_conv.py, RevisionAB trainer, RareLesion, SoftmaxFocal, DC_and_Focal, AB_CONFIG_DIFF.md
-  split_manifests/ study_split_manifest.json, train/val/Ts lists, checkpoint_sha256.json
-  audit_refs/     SCHEME_FROZEN.json, coord_frame_check.json, RUN_MANIFEST_*, imagesTs metrics
+locks/            splits_final.json, epoch_budget.json, eval_rules.json, SCHEME_FROZEN.md, seed2.json, plans_2d_from_A_backup.json
+code/             coord_conv.py, RevisionAB trainer, RareLesion, SoftmaxFocal, DC_and_Focal, AB_CONFIG_DIFF.md
+split_manifests/  study_split_manifest.json, train/val/Ts lists, checkpoint_sha256.json
+audit_refs/       SCHEME_FROZEN.json, coord_frame_check.json, RUN_MANIFEST_*, imagesTs metrics
 ```
