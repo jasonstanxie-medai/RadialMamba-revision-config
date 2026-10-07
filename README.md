@@ -7,6 +7,7 @@ Contains verified training/eval configuration extracts, study-level split manife
 ## Contents
 
 - `configuration_verified.md` — training and evaluation configuration extracted from saved plans, logs, and checkpoints
+- `training_environment.md` — Python/PyTorch/CUDA versions and training launch commands from the training machine
 - `locks/` — splits, epoch budget, eval rules, plans
 - `code/` — coord conv, Revision A/B trainer, Dice+Focal loss excerpts
 - `split_manifests/` — 74/19/10 study lists and checkpoint hashes
