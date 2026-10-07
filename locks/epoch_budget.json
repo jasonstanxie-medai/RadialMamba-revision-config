@@ -1,0 +1,14 @@
+{
+  "gpu_cutoff_date_on_disk": "2026-10-07",
+  "gpu_cutoff_clock_found": false,
+  "operational_stop": "2026-10-07T00:00:00+08:00",
+  "margin_hours": 3,
+  "reason": "Documents name 2026-10-07 and do not give an hour. Epoch budget is sized to finish by 2026-10-07 00:00 +08, leaving that calendar day to copy checkpoints.",
+  "measured_epoch_seconds": 126.94,
+  "measured_from": "/root/IVOCT_RadialMamba/revision_ab/logs/speed.log",
+  "batch_size": 12,
+  "num_epochs": 932,
+  "early_stop": null,
+  "locked_at": "2026-10-05T12:07:32.356058+08:00",
+  "usable_seconds": 118347.643942
+}

@@ -1,0 +1,10 @@
+{
+  "tag": "B_main",
+  "trainer": "nnUNetTrainerSwinUMambaRevisionABNoCoord",
+  "selected_checkpoint_src": "/root/IVOCT_RadialMamba/revision_ab/backup/B/checkpoint_final.pth",
+  "loaded_as": "checkpoint_final.pth",
+  "split": "imagesTs",
+  "n_images_expected": 1899,
+  "save_probabilities": false,
+  "coord": "AddCoordinates on the network input tensor (nnU-Net patch), not full-image catheter origin"
+}

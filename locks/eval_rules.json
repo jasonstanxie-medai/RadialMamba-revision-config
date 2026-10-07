@@ -1,0 +1,34 @@
+{
+  "locked_at": "2026-10-05T13:05:00+08:00",
+  "locked_before_imagesTs_scores": true,
+  "checkpoint": "checkpoint_final.pth",
+  "forbidden_checkpoint": "checkpoint_best.pth",
+  "aggregation": "study",
+  "study_dice": "sum TP/FP/FN over all slices in the study, then Dice",
+  "main_table": "unweighted mean of study Dice; studies with tp+fp+fn=0 are excluded from that class mean and listed separately",
+  "empty_empty": "Dice and IoU are null and are not averaged. FP pixel count is 0. This matches nnU-Net evaluate_predictions.",
+  "empty_gt_nonempty_pred": "Dice = 0, IoU = 0, FN = 0, FP = predicted pixels. Recall is not defined on a frame with no GT.",
+  "nonempty_gt": "Dice = 2TP/(2TP+FP+FN). Recall = TP/(TP+FN).",
+  "bootstrap": {
+    "unit": "study",
+    "paired": true,
+    "n": 10000,
+    "seed": 20261005,
+    "slices": "all slices of a drawn study stay together",
+    "contrasts": ["A-B", "A2-B2"],
+    "do_not": "Do not pool seeds as extra patients. Do not bootstrap slices as patients."
+  },
+  "vv_required_fields": [
+    "n_studies",
+    "n_positive_studies",
+    "n_positive_frames",
+    "n_negative_frames",
+    "dice_on_positive_frames_pooled",
+    "recall_on_positive_frames",
+    "n_negative_frames_with_any_fp",
+    "fp_pixels_on_negative_frames"
+  ],
+  "roc_pr": "Only if the npz key probabilities is a real softmax (class axis sums to 1). Pixel probabilities, not argmax masks. If the check fails, do not draw curves.",
+  "scope": "Locked Dice-Focal, gamma 2, both loss weights 1, foreground oversample 0.5. No class alpha, no VV oversample. Not manuscript section 3.5 full RadialMamba. No recipe C.",
+  "order": "Back up checkpoint_final, then imagesTs for A and B, then A2 and B2. Do not stop A2/B2 or add epochs or switch checkpoints after seeing imagesTs."
+}

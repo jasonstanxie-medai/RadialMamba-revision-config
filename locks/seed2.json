@@ -1,0 +1,11 @@
+{
+  "decided_at": "2026-10-05T12:26:00+08:00",
+  "decided_before_test_scores": true,
+  "why": "GPUs 5 and 6 were idle. Protocol allows a second seed only when the primary A/B still has time margin. Primary epochs are ~114s, so 932 epochs finish on 6 Oct evening, before the 7 Oct 00:00 operational stop. Seed 2 runs in parallel and does not change the locked primary budget.",
+  "seed": 43,
+  "seed1": "nnU-Net fork sets no manual seed. Seed 1 stays as already running. Do not restart it.",
+  "same_as_primary": ["split", "loss", "lr", "freeze", "batch", "epochs", "pretrain", "coord_init"],
+  "differs": ["REVAB_SEED=43", "results directory nnUNet_results_seed2", "nnUNet_n_proc_DA=4"],
+  "gpus": {"A2": 5, "B2": 6},
+  "not": "Not a new ablation. Not chosen from inner-val or test Dice. No third recipe."
+}

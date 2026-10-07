@@ -1,0 +1,30 @@
+{
+  "A_main": {
+    "path_in_KEEP": "archive/v1_locked_recipe_20261006_1110/A/checkpoint_latest.pth",
+    "sha256": "d2b29a7fff7dd09df1e5bf26af5d939b597d1cd6614e5ab245d0d627f90002bc",
+    "current_epoch": 694,
+    "trainer_name": "nnUNetTrainerSwinUMambaRevisionABCoord"
+  },
+  "B_main": {
+    "path_in_KEEP": "backup/B/checkpoint_final.pth",
+    "sha256": "86433511faf72f0fbbeab3adfad9c5cd3d94d9bc1e64934499916e4cdc0b882b",
+    "current_epoch": 932,
+    "trainer_name": "nnUNetTrainerSwinUMambaRevisionABNoCoord"
+  },
+  "secondary_ft700_A": {
+    "path": "archive/ft700_2336/Aft/checkpoint_final.pth",
+    "sha256": "3227c3407aae30359072db99db70927601341973899dfb96ef37d68e25c5b9bc"
+  },
+  "secondary_ft700_B": {
+    "path": "archive/ft700_2336/Bft/checkpoint_final.pth",
+    "sha256": "5ace1692f7548cf79ec8bf41cb8f73213f419b748c7e169348a104232210d72c"
+  },
+  "secondary_seed2_A2": {
+    "path": "backup/A2/checkpoint_final.pth",
+    "sha256": "3a9ae4e98522dbfccfa6f2f06146be06872470126c0c788e686921b3af76cb9c"
+  },
+  "secondary_seed2_B2": {
+    "path": "backup/B2/checkpoint_final.pth",
+    "sha256": "4669ceb64bc4ba5bb3b83845efc726372c4fff9cdf4ec8400648e4e8ccc58d75"
+  }
+}

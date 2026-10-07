@@ -1,0 +1,25 @@
+{
+  "formula": "x,y in [-1,1] on the tensor passed to the stem; r = hypot(x,y)/sqrt(2) in [0,1]",
+  "center_r_at_255_and_256": [
+    0.00195694716242667,
+    0.001956947162426559
+  ],
+  "corner_r": 1.0,
+  "column0_is": -1.0,
+  "last_column_is": 1.0,
+  "median_image": [
+    750,
+    750
+  ],
+  "patch": [
+    512,
+    512
+  ],
+  "inference_tile_starts": [
+    0,
+    238
+  ],
+  "n_tiles_on_median_image": 4,
+  "augmentation": "Rotation, scale, and mirror run before the network. AddCoordinates rebuilds x,y,r from the current patch indices, so a mirrored tensor still has column 0 at -1.",
+  "conclusion": "The numeric definition matches manuscript 3.4 for the tensor that enters the stem. Training uses a 512 crop of a median 750 image, and inference uses 4 sliding-window tiles. The origin is the current patch center, not a single frame locked to the catheter after an off-center crop."
+}
