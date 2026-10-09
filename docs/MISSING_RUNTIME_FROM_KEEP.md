@@ -1,48 +1,39 @@
-# Runtime files still needed from KEEP / training tree
+# Runtime files: KEEP status (2026-10-09 remount)
 
-**Status (2026-10-09, this Mac):** `/Volumes/My Passport/IVOCT_KEEP` is **not mounted**, and the oral path `/root/IVOCT_RadialMamba/...` is unreachable. No local byte-identical copy of the **training-modified** `SwinUMamba.py` was found.
+**Weights / images / full `.npz` probability volumes are intentionally not published.** That matches common practice: release code, configs, splits, and checkpoint SHA256; share weights on request or via a separate controlled channel if needed.
 
-Do **not** treat `upstream/swin_umamba_stock/` as the revision backbone: that tree is the **unmodified** Swin-UMamba release (Apache-2.0), kept only for license/reference.
+## Present on My Passport KEEP and now in this repo
 
-## Recovered on this machine (committed)
-
-| File | Source |
+| Item | KEEP path → repo |
 | --- | --- |
-| `nnunetv2/nets/coord_conv.py` | Cursor history of training-era `coord_conv.py` |
-| `nnunetv2/nets/UMambaEnc_2d.py` | Cursor history (coordinate-capable UMambaEnc; related path, not primary A/B) |
-| `nnunetv2/training/nnUNetTrainer/nnUNetTrainerUMambaEncCoord.py` | Cursor history |
-| `nnunetv2/training/nnUNetTrainer/nnUNetTrainerUMambaEncCoordNoAMP.py` | Cursor history |
-| `nnunetv2/training/nnUNetTrainer/nnUNetTrainerSwinUMambaRevisionAB.py` | Verified revision extract |
-| `nnunetv2/training/nnUNetTrainer/nnUNetTrainerIVOCTRareLesion.py` | Verified revision extract |
-| `nnunetv2/training/loss/softmax_focal_loss.py` | Verified revision extract |
-| `scripts/run/train_revision_ab.sh` | Published wrapper from `training_environment.md` |
-| `scripts/run/predict_frozen.sh` | Published nnU-Net predict wrapper (not oral script bytes) |
-| `upstream/swin_umamba_stock/...` | Unmodified third_party Swin-UMamba |
+| Oral `predict_frozen.sh` | `handoff_…/scripts/predict_frozen.sh` → `scripts/run/predict_frozen.oral.sh` |
+| `eval_locked.py` | → `scripts/run/eval_locked.py` |
+| `score_inner_val.py` | → `scripts/run/score_inner_val.py` |
+| Coord + RevisionAB extracts | already in `src/` / `nnunetv2/` |
+| `dataset.json` (label map) | → `configs/dataset893/dataset.json` |
+| Checkpoint SHA256 | `reproducibility/checkpoints.json` (files stay on KEEP only) |
 
-## Still missing (copy from KEEP when disk returns)
+## Still not on KEEP (never copied from oral full tree)
 
-Expected under oral/KEEP, e.g.  
-`/root/IVOCT_RadialMamba/IVOCT_REMOTE_READY/U-Mamba-main/umamba/` or  
-`/Volumes/My Passport/IVOCT_KEEP/handoff_20261007/` / full code tree:
+KEEP `code/` only stored extracts. The full modified tree  
+`/root/IVOCT_RadialMamba/IVOCT_REMOTE_READY/U-Mamba-main/umamba/` was **not** in the handoff package.
 
-1. `nnunetv2/nets/SwinUMamba.py` with `use_add_coordinates`, `add_coordinates_with_r`, `coord_init`, `coord_stem_baseline_ckpt`, `vmamba_ckpt_path`
-2. `nnunetv2/training/nnUNetTrainer/nnUNetTrainerSwinUMamba.py` (parent used in training)
-3. `nnunetv2/training/nnUNetTrainer/nnUNetTrainerSwinUMambaCoord.py`
-4. `nnunetv2/training/dataloading/data_loader_2d_ivoct_vv.py` (+ deps)
-5. Full `compound_losses.py` containing `DC_and_Focal_loss` (do not overwrite other loss classes with the excerpt)
-6. Original `launch_one.sh`, oral `predict_frozen.sh`, `eval_locked.py`, `score_inner_val.py` if present
-7. `audit/pip_freeze_revision_ab_venv.txt`
-8. Dataset893 `dataset.json` and any label-conversion scripts used for nnU-Net packing
+Still missing unless recovered from oral GPU disk:
 
-## Remount recipe for Cursor
+1. Training-modified `nnunetv2/nets/SwinUMamba.py` (`use_add_coordinates`, …)
+2. `nnUNetTrainerSwinUMamba.py` / `nnUNetTrainerSwinUMambaCoord.py` as used in training
+3. `data_loader_2d_ivoct_vv.py`
+4. Full `compound_losses.py` containing `DC_and_Focal_loss` (repo has excerpt only)
+5. `pip_freeze_revision_ab_venv.txt` (versions remain in `docs/environment.md` / legacy notes)
+6. Original `launch_one.sh` (published wrapper: `scripts/run/train_revision_ab.sh`)
 
-```bash
-# after My Passport is mounted
-KEEP="/Volumes/My Passport/IVOCT_KEEP/handoff_20261007"
-# or full umamba tree on Passport / oral rsync target
-find "$KEEP" /Volumes/My\ Passport -name 'SwinUMamba.py' 2>/dev/null
-# copy only verified training paths into nnunetv2/, then re-run:
-python3 scripts/verify_bundle.py
-```
+`upstream/swin_umamba_stock/` remains the **unmodified** upstream reference, not the revision backbone.
 
-Then update this file and the README **Snapshot scope** sentence.
+## Weights (local only — do not git add)
+
+Example KEEP locations (multi‑GB; excluded by `.gitignore` intent):
+
+- `archive/v1_locked_recipe_20261006_1110/A/checkpoint_latest.pth` (A@694)
+- `backup/B/checkpoint_final.pth` (B@932)
+
+Publish SHA256 only; optional later: Zenodo/Figshare private link or “available from corresponding author.”

@@ -1,0 +1,19 @@
+{
+    "channel_names": {
+        "0": "R",
+        "1": "G",
+        "2": "B"
+    },
+    "labels": {
+        "background": 0,
+        "Lumen": 1,
+        "Fibrous cap": 2,
+        "Lipid core": 3,
+        "Vasa vasorum": 4
+    },
+    "numTraining": 19494,
+    "file_ending": ".png",
+    "name": "Dataset893_IVOCT_holdout90",
+    "description": "IVOCT 2D: 90% studies train (5-fold SGKFCV), 10% studies hold-out test",
+    "overwrite_image_reader_writer": "NaturalImage2DIO"
+}

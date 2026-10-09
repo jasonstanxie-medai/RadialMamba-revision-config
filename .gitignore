@@ -9,3 +9,10 @@ nnUNet_raw/
 nnUNet_preprocessed/
 nnUNet_results*/
 outputs/
+
+# Do not publish training artifacts
+*.pth
+*.npz
+*.nii.gz
+__pycache__/
+.DS_Store
