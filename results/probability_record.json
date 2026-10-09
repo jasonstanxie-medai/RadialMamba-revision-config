@@ -1,0 +1,87 @@
+{
+  "tag": "imagesTs_main_tied",
+  "kind": "pixel_softmax_exact_float32_tie_merged",
+  "supersedes_512bin": true,
+  "supersedes_per_pixel_order_sensitive": true,
+  "withdraw_vv_auroc_approx_random_claim": true,
+  "metric_definitions": {
+    "AUROC": "trapezoid on ROC after grouping equal float32 scores into one threshold (tie-merged; order-independent)",
+    "AP": "sum (\u0394recall)*precision over distinct score thresholds (sklearn average_precision; not trapezoidal AUPRC)",
+    "not": "trapezoidal AUPRC; not 512-bin histogram; not within-tie pixel order",
+    "prevalence": "positive_pixels/all_pixels"
+  },
+  "arm_a": {
+    "tag": "A",
+    "n_pixels": 1068187500,
+    "dtype": "float32",
+    "classes": {
+      "lumen": {
+        "auroc": 0.9992148154885336,
+        "average_precision": 0.9969082101745911,
+        "n_pos_pixels": 112337102,
+        "n_neg_pixels": 955850398,
+        "prevalence": 0.1051660892867591
+      },
+      "fibrous_cap": {
+        "auroc": 0.9836290324515214,
+        "average_precision": 0.3302845021759038,
+        "n_pos_pixels": 2007250,
+        "n_neg_pixels": 1066180250,
+        "prevalence": 0.0018791176642677433
+      },
+      "lipid": {
+        "auroc": 0.8642279809041266,
+        "average_precision": 0.25327590386753496,
+        "n_pos_pixels": 19737420,
+        "n_neg_pixels": 1048450080,
+        "prevalence": 0.018477486396348955
+      },
+      "vv": {
+        "auroc": 0.8806739089544219,
+        "average_precision": 0.0010274104721013015,
+        "n_pos_pixels": 36450,
+        "n_neg_pixels": 1068151050,
+        "prevalence": 3.4123222748815166e-05
+      }
+    }
+  },
+  "arm_b": {
+    "tag": "B",
+    "n_pixels": 1068187500,
+    "dtype": "float32",
+    "classes": {
+      "lumen": {
+        "auroc": 0.9989809752852963,
+        "average_precision": 0.9964913118333758,
+        "n_pos_pixels": 112337102,
+        "n_neg_pixels": 955850398,
+        "prevalence": 0.1051660892867591
+      },
+      "fibrous_cap": {
+        "auroc": 0.9732883787905662,
+        "average_precision": 0.298908650663267,
+        "n_pos_pixels": 2007250,
+        "n_neg_pixels": 1066180250,
+        "prevalence": 0.0018791176642677433
+      },
+      "lipid": {
+        "auroc": 0.8565360588454272,
+        "average_precision": 0.22476410198759972,
+        "n_pos_pixels": 19737420,
+        "n_neg_pixels": 1048450080,
+        "prevalence": 0.018477486396348955
+      },
+      "vv": {
+        "auroc": 0.8021798988836016,
+        "average_precision": 0.0002692198509562111,
+        "n_pos_pixels": 36450,
+        "n_neg_pixels": 1068151050,
+        "prevalence": 3.4123222748815166e-05
+      }
+    }
+  },
+  "figures": {
+    "roc": "/root/IVOCT_RadialMamba/revision_ab/audit/roc_pr/imagesTs_main_tied_roc_exact.png",
+    "pr": "/root/IVOCT_RadialMamba/revision_ab/audit/roc_pr/imagesTs_main_tied_pr_exact.png"
+  }
+}

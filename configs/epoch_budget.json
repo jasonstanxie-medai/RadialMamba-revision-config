@@ -1,0 +1,6 @@
+{
+  "num_epochs": 932,
+  "batch_size": 12,
+  "early_stop": null,
+  "note": "Portable export of the run budget. Checkpoints were selected on inner-validation; see reproducibility/selection_record.json."
+}

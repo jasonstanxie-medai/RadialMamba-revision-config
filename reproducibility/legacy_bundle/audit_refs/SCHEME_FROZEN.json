@@ -1,0 +1,33 @@
+{
+  "frozen_at": "2026-10-07T00:25:00+08:00",
+  "rule": "development-stage; inner-val lesion_macro3 independent of A-B; imagesTs unused until freeze",
+  "main_recipe": "v1_locked_simplified",
+  "selection_metric": "unweighted mean of fibrous_cap, lipid, vv study_mean_dice",
+  "lumen": "reported separately, not used for selection",
+  "empty_mask": {
+    "study_mean_denominator": "studies with tp+fp+fn>0 for that class",
+    "empty_gt_empty_pred": "Dice null, excluded from study-mean",
+    "empty_gt_nonempty_pred": "Dice 0, included"
+  },
+  "main": {
+    "A": {
+      "tag": "A_main",
+      "checkpoint": "archive/v1_locked_recipe_20261006_1110/A/checkpoint_latest.pth",
+      "epoch": 694,
+      "inner_val_lesion_macro3": 0.2313
+    },
+    "B": {
+      "tag": "B_main",
+      "checkpoint": "backup/B/checkpoint_final.pth",
+      "epoch": 932,
+      "inner_val_lesion_macro3": 0.2071
+    }
+  },
+  "secondary": {
+    "ft700": {"A": "archive/ft700_2336/Aft/checkpoint_final.pth", "B": "archive/ft700_2336/Bft/checkpoint_final.pth"},
+    "v1_seed2": {"A2": "backup/A2/checkpoint_final.pth", "B2": "backup/B2/checkpoint_final.pth"}
+  },
+  "imagesTs_history": "saved result files are not computed on imagesTs; cannot prove nobody ever viewed unsaved scores",
+  "study_patient": "103 source IDs; no second patient key; report as study clustering",
+  "coord": "AddCoordinates on nnU-Net patch tensor, not catheter-locked full-image"
+}

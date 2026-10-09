@@ -1,0 +1,74 @@
+{
+  "scope": "v1 primary coordinate comparison, not the earlier full imbalance recipe",
+  "patch_size": [
+    512,
+    512
+  ],
+  "batch_size": 12,
+  "training_budget_epochs": 932,
+  "train_iterations_per_epoch": 250,
+  "online_val_iterations_per_epoch": 50,
+  "coordinates": {
+    "x_axis": "height",
+    "y_axis": "width",
+    "xy_range": [
+      -1,
+      1
+    ],
+    "r_range": [
+      0,
+      1
+    ],
+    "rebuild": "on the current patch after spatial augmentation and mirroring, before the stem",
+    "extra_channels": 3
+  },
+  "loss": {
+    "name": "Dice + Softmax Focal",
+    "dice_weight": 1.0,
+    "focal_weight": 1.0,
+    "focal_gamma": 2.0,
+    "focal_alpha": null,
+    "dice_background": false,
+    "batch_dice": true,
+    "dice_smooth": 1e-05
+  },
+  "deep_supervision_weights": [
+    0.5714285714285714,
+    0.2857142857142857,
+    0.14285714285714285,
+    0
+  ],
+  "foreground_oversampling": 0.5,
+  "vv_specific_oversampling": 0.0,
+  "optimizer": {
+    "name": "AdamW",
+    "initial_lr": 0.0001,
+    "weight_decay": 0.05,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-05
+  },
+  "scheduler": {
+    "name": "CosineAnnealingLR",
+    "T_max": 932,
+    "eta_min": 1e-06
+  },
+  "freeze_encoder_epochs": 10,
+  "stem_lr_multiplier": 1.0,
+  "warmup_epochs": 0,
+  "pretrained_encoder": "vmamba_tiny_e292.pth; VMamba patch embedding skipped",
+  "coordinate_weight_initialization": "zeros; retain current RGB initialization",
+  "seed_primary": null,
+  "seed_second_main_process": 43,
+  "augmentation_workers_fully_seeded": false,
+  "inference": {
+    "tile_step_size": 0.5,
+    "gaussian_blending": true,
+    "mirror_axes": [
+      0,
+      1
+    ]
+  }
+}
