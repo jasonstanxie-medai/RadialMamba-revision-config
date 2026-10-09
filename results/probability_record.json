@@ -81,7 +81,7 @@
     }
   },
   "figures": {
-    "roc": "/root/IVOCT_RadialMamba/revision_ab/audit/roc_pr/imagesTs_main_tied_roc_exact.png",
-    "pr": "/root/IVOCT_RadialMamba/revision_ab/audit/roc_pr/imagesTs_main_tied_pr_exact.png"
+    "roc": "assets/probability_roc.png",
+    "pr": "assets/probability_pr.png"
   }
 }

@@ -24,8 +24,7 @@ LOCK_PATH = os.environ.get(
 )
 VMAMBA_CKPT = os.environ.get(
     "RADIALMAMBA_VMAMBA_CKPT",
-    "/root/IVOCT_RadialMamba/IVOCT_REMOTE_READY/U-Mamba-main/umamba/"
-    "data/pretrained/vmamba/vmamba_tiny_e292.pth",
+    "",  # set to local vmamba_tiny_e292.pth; required before training
 )
 
 # Identical for A and B. Do not read SWIN_COORD_* or old fold checkpoints.

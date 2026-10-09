@@ -2,9 +2,9 @@
 
 ## Export status
 
-The repository provides the public project page, coordinate code, Revision A/B trainers, split/recipe records, and evaluation artifacts. Recovered training-era files under `nnunetv2/` include `coord_conv.py` and UMambaEnc-coordinate trainers (from local editor history). Published wrappers live in `scripts/run/`.
+The repository provides coordinate code, Revision A/B trainers, split/recipe records, evaluation artifacts, and run wrappers under `scripts/run/`. Files under `nnunetv2/` include `coord_conv.py` and related trainers.
 
-It is **not** yet a self-contained clone-and-train install: the **modified** `SwinUMamba.py`, VV dataloader, and oral launch scripts are still missing until KEEP is remounted ([MISSING_RUNTIME_FROM_KEEP.md](MISSING_RUNTIME_FROM_KEEP.md)). Stock upstream Swin-UMamba under `upstream/swin_umamba_stock/` is unmodified reference only.
+It is **not** a self-contained clone-and-train install of the full modified backbone tree. See [RUNTIME_GAPS.md](RUNTIME_GAPS.md). Stock upstream Swin-UMamba under `upstream/swin_umamba_stock/` is an unmodified reference copy only.
 
 The standalone split/result verification and coordinate example can run using the bundled files. Full training and checkpoint inference additionally require the archived modules below.
 
@@ -32,7 +32,7 @@ The public trainer copy accepts two path variables:
 - `RADIALMAMBA_EPOCH_LOCK`: path to the run-budget JSON. Its default points to the repository's `configs/epoch_budget.json`.
 - `RADIALMAMBA_VMAMBA_CKPT`: path to the generic `vmamba_tiny_e292.pth` encoder checkpoint.
 
-These are publication-time portability edits. They change file lookup, not the recorded loss, sampling, optimizer, or epoch budget. See [export notes](../reproducibility/export_notes.md).
+These environment-variable defaults change file lookup only, not the recorded loss, sampling, optimizer, or epoch budget. See [export notes](../reproducibility/export_notes.md).
 
 ## Recorded training entry point
 

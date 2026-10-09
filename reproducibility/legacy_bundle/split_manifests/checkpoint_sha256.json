@@ -1,15 +1,15 @@
 {
   "A_main": {
-    "path_in_KEEP": "archive/v1_locked_recipe_20261006_1110/A/checkpoint_latest.pth",
     "sha256": "d2b29a7fff7dd09df1e5bf26af5d939b597d1cd6614e5ab245d0d627f90002bc",
     "current_epoch": 694,
-    "trainer_name": "nnUNetTrainerSwinUMambaRevisionABCoord"
+    "trainer_name": "nnUNetTrainerSwinUMambaRevisionABCoord",
+    "path_in_archive": "archive/v1_locked_recipe_20261006_1110/A/checkpoint_latest.pth"
   },
   "B_main": {
-    "path_in_KEEP": "backup/B/checkpoint_final.pth",
     "sha256": "86433511faf72f0fbbeab3adfad9c5cd3d94d9bc1e64934499916e4cdc0b882b",
     "current_epoch": 932,
-    "trainer_name": "nnUNetTrainerSwinUMambaRevisionABNoCoord"
+    "trainer_name": "nnUNetTrainerSwinUMambaRevisionABNoCoord",
+    "path_in_archive": "backup/B/checkpoint_final.pth"
   },
   "secondary_ft700_A": {
     "path": "archive/ft700_2336/Aft/checkpoint_final.pth",

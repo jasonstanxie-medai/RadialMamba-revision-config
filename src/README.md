@@ -10,4 +10,4 @@
 
 The coordinate example imports `coord_conv.py` directly. The trainer modules require their original nnU-Net package paths and additional archived source files. See [training and inference](../docs/training_and_inference.md).
 
-Publication-time path and comment edits are listed in [export notes](../reproducibility/export_notes.md). These files do not include a newly invented backbone implementation.
+Path and comment edits for local installation are listed in [export notes](../reproducibility/export_notes.md). These files do not invent a new backbone implementation.

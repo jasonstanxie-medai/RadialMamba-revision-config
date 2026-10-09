@@ -45,7 +45,7 @@ The primary point estimates favor the coordinate arm, while the paired intervals
 | [`reproducibility/`](reproducibility/README.md) | Checkpoint hashes, selection record, and export notes |
 | [`upstream/`](upstream/README.md) | Unmodified Swin-UMamba stock (not the revision-modified net) |
 
-**Snapshot scope (2026-10-09):** public project page with architecture figure, verified configs/splits/results, coordinate module, Revision A/B trainers, and analysis scripts. Also includes recovered training-era `coord_conv.py` / UMambaEnc-coord trainers from local editor history, plus **unmodified** upstream Swin-UMamba stock under [`upstream/`](upstream/README.md). The **training-modified** `SwinUMamba.py` (coordinate kwargs in `get_swin_umamba_from_plans`), VV dataloader, and oral launch scripts are **not** on this Mac until KEEP is remounted — see [`docs/MISSING_RUNTIME_FROM_KEEP.md`](docs/MISSING_RUNTIME_FROM_KEEP.md). Model weights, raw images, and per-pixel probability arrays are **not** published here (common practice; SHA256 of selected checkpoints is in `reproducibility/checkpoints.json`).
+**Snapshot scope:** architecture overview, verified configs/splits/results, coordinate module, Revision A/B trainers, analysis scripts, and an **unmodified** upstream Swin-UMamba reference under [`upstream/`](upstream/README.md). The training-modified `SwinUMamba.py` and related archived modules are listed in [`docs/RUNTIME_GAPS.md`](docs/RUNTIME_GAPS.md). Model weights, raw images, and per-pixel probability arrays are **not** published (SHA256 of selected checkpoints: [`reproducibility/checkpoints.json`](reproducibility/checkpoints.json)).
 
 ## Start here
 

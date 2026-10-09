@@ -19,7 +19,7 @@ These values come from the training-machine environment export dated 2026-10-07.
 
 A single training Git HEAD was not retained for the unpacked/copied source tree. The source snapshot, manifests, and file hashes identify the exported materials. A future repository commit identifies the publication of these files, not a recovered training commit.
 
-The archived full `pip freeze` is referenced in the handoff but is not included in the received configuration ZIP. It remains one of the source files to add to the public export.
+A full `pip freeze` dump is not bundled. The table above lists the recorded training-machine versions used for the reported experiments.
 
 ## Analysis dependencies
 
