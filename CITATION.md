@@ -2,7 +2,7 @@
 
 Project: RadialMamba, coordinate-augmented Swin-UMamba for IV-OCT segmentation.
 
-Repository: https://github.com/jasonstanxie-medai/RadialMamba-revision-config
+Repository: https://github.com/jasonstanxie-medicalAI/RadialMamba-revision-config
 
 The associated manuscript is under review. This snapshot does not assign an accepted-publication DOI or an acceptance date. For a reference to the code, include the repository URL and the specific public release or commit used.
 
